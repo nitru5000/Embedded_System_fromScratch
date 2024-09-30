@@ -4,6 +4,7 @@
 #include <stdlib.h>
 
 int main() {  
+    
     int a ;  
 
     printf("Enter an integre you want to check:");  

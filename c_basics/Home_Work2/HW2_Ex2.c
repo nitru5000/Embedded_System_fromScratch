@@ -5,6 +5,7 @@
 
 int main()
 {
+    
     char a;
 
     printf("Enter an Alphabet:");

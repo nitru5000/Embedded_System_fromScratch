@@ -5,6 +5,7 @@
 
 int main()
 {
+    
     int n;
     float num[100], av, sum = 0.0;
 
