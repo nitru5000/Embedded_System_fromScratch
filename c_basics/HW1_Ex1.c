@@ -3,7 +3,8 @@
 #include <math.h>
 #include <stdlib.h>
 
-int main() {
- printf ("c programming");
+int main()
+{
+    printf("c programming");
     return 0;
 }
