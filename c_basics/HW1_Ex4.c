@@ -3,13 +3,14 @@
 #include <math.h>
 #include <stdlib.h>
 
-int main() {
- 
- float i ,j;
+int main()
+{
 
- printf("Enter two integers:");
- scanf("%f %f",&i,&j);
- printf("product: %f",(i*j));
+    float i, j;
+
+    printf("Enter two integers:");
+    scanf("%f %f", &i, &j);
+    printf("product: %f", (i * j));
 
     return 0;
 }

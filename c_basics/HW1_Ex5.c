@@ -3,13 +3,14 @@
 #include <math.h>
 #include <stdlib.h>
 
-int main() {
- 
- char i ;
+int main()
+{
 
- printf("Enter a character:");
- scanf("%c",&i);
- printf("ASCII Value of %c: %d",i,i);
+    char i;
+
+    printf("Enter a character:");
+    scanf("%c", &i);
+    printf("ASCII Value of %c: %d", i, i);
 
     return 0;
 }
