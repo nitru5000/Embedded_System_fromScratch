@@ -3,25 +3,26 @@
 #include <math.h>
 #include <stdlib.h>
 
-int Fact(int n);
+int rev(int c);
+
+char arr[100];
 
 int main()
 {
 
-    int n, i;
-
-    printf(" Enter a Positive Enteger :");
-    scanf("%d", &n);
-    printf("Factorial of %d : %d",n, Fact(n));
+    printf(" Enter a sentence  :  ");
+    gets(arr);
+    int i = strlen(arr) - 1;
+    rev(i);
 
     return 0;
 }
 
-int Fact(int n)
+int rev(int c)
 {
-
-    if (n == 1)
-        return 1;
-
-    return n * Fact(n - 1);
+    if (c < 0)
+        return 0;
+    printf("%c", arr[c]);
+    rev(--c);
 }
+
