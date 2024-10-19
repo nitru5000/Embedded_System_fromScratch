@@ -3,36 +3,25 @@
 #include <math.h>
 #include <stdlib.h>
 
-void check_prime(int n);
+int Fact(int n);
 
 int main()
 {
 
-    int high, low;
+    int n, i;
 
-    printf(" Enter the two numbers (intervals) :");
-    scanf("%d %d", &high, &low);
-    printf(" Prime numbers are : \n ");
-
-    for (int i = high + 1; i < low; i++)
-    {
-        check_prime(i);
-    }
+    printf(" Enter a Positive Enteger :");
+    scanf("%d", &n);
+    printf("Factorial of %d : %d",n, Fact(n));
 
     return 0;
 }
 
-void check_prime(int n)
+int Fact(int n)
 {
-    int flag = 0;
-    for (int i = 2; i < (n / 2); i++)
-    {
-        if (n % i == 0)
-        {
-            flag = 1;
-            break;
-        }
-    }
-    if (flag == 0)
-        printf("%d ", n);
+
+    if (n == 1)
+        return 1;
+
+    return n * Fact(n - 1);
 }
