@@ -3,19 +3,36 @@
 #include <math.h>
 #include <stdlib.h>
 
+void check_prime(int n);
+
 int main()
 {
 
-    char arr[50], c = 0;
+    int high, low;
 
-    printf("Enter the string  : \n");
-    gets(arr);
-    printf("Reverse string is : ");
+    printf(" Enter the two numbers (intervals) :");
+    scanf("%d %d", &high, &low);
+    printf(" Prime numbers are : \n ");
 
-    for (int i = strlen(arr) - 1; i >= 0; i--)
+    for (int i = high + 1; i < low; i++)
     {
-        printf("%c", arr[i]);
+        check_prime(i);
     }
 
     return 0;
+}
+
+void check_prime(int n)
+{
+    int flag = 0;
+    for (int i = 2; i < (n / 2); i++)
+    {
+        if (n % i == 0)
+        {
+            flag = 1;
+            break;
+        }
+    }
+    if (flag == 0)
+        printf("%d ", n);
 }
