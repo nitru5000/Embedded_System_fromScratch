@@ -15,6 +15,6 @@ int main()
     scanf("%d", &num);
 
     printf("%.3f", func(num));
-
+ 
     return 0;
 }

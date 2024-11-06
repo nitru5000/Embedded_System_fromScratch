@@ -3,19 +3,17 @@
 #include <math.h>
 #include <stdlib.h>
 
-#define Prime  0 
-#define not_prime 1
 void check_prime(int n);
 
 int main()
 {
 
-    int i, low;
+    int high, low;
 
     printf(" Enter the two numbers (intervals) :");
-    scanf("%d %d", &i, &low);
+    scanf("%d %d", &high, &low);
     printf(" Prime numbers are : \n ");
-    
+    int i = high ;
     for (; i < low; i++)
     {
         check_prime(i);
@@ -25,22 +23,18 @@ int main()
 }
 
 void check_prime(int n)
-{
-    if(n == 1) {
-     printf("%d ", n);
-     return ;
-    } 
-    int flag = Prime;
+{   
+    if(n == 1) return ;
+    int flag = 0;
     int i = 2 ;
-    for (; i < (n / 2); i++)
+    for (; i <= sqrt(n); i++)
     {
-        
         if (n % i == 0)
         {
-            flag = not_prime;
+            flag = 1;
             break;
-        }
+        } 
     }
-    if (flag == Prime)
+    if (flag == 0)
         printf("%d ", n);
 }

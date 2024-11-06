@@ -13,7 +13,7 @@ int func(int num)
     }
     return p;
 }
-
+ 
 int main()
 {
     int num, p = 0;
