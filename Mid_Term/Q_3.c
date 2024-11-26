@@ -13,7 +13,7 @@ int main()
     printf(" Enter the two numbers (intervals) :");
     scanf("%d %d", &high, &low);
     printf(" Prime numbers are : \n ");
-    int i = high ;
+    int i = high;
     for (; i < low; i++)
     {
         check_prime(i);
@@ -23,17 +23,18 @@ int main()
 }
 
 void check_prime(int n)
-{   
-    if(n == 1) return ;
+{
+    if (n == 1)
+        return;
     int flag = 0;
-    int i = 2 ;
+    int i = 2;
     for (; i <= sqrt(n); i++)
     {
         if (n % i == 0)
         {
             flag = 1;
             break;
-        } 
+        }
     }
     if (flag == 0)
         printf("%d ", n);
