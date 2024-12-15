@@ -2,9 +2,9 @@
  *
  * Module: Common - Platform Types Abstraction
  *
- * File Name: std_types.h
+ * File Name: Platform_Types.h
  *
- * Description: types for AVR
+ * Description: types for AOTUSAR
  *
  * 
  *
