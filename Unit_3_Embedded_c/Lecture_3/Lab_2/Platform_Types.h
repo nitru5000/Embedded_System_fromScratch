@@ -2,11 +2,14 @@
  *
  * Module: Common - Platform Types Abstraction
  *
- * File Name: Platform_types.h
+ * File Name: std_types.h
  *
- * Author:abdullah hassan rajeh
+ * Description: types for AVR
+ *
+ * 
  *
  *******************************************************************************/
+
 #include <stdbool.h>
 #include <stdint.h>
 
