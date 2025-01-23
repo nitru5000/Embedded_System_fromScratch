@@ -9,64 +9,50 @@ sram             0x20000000         0x00005000         xrw
 Linker script and memory map
 
 
-.text           0x08000000       0xb3
+.text           0x08000000       0xbf
  *(.vectors*)
- .vectors       0x08000000       0x1c startup.o
-                0x08000000                vectors
+ .vectors       0x08000000       0x34 startup.o
  *(.text*)
- .text          0x0800001c       0x7c main.o
-                0x0800001c                main
- .text          0x08000098       0x18 startup.o
-                0x08000098                Bus_Fault_Handler
-                0x08000098                H_Fault_Handler
-                0x08000098                MM_Fault_Handler
-                0x08000098                Uasage_Fault_Handler
-                0x08000098                Default_Handler
-                0x08000098                NMI_handler
-                0x080000a4                Reset_Handler
+ .text          0x08000034       0x7c main.o
+                0x08000034                main
+ .text          0x080000b0        0xa startup.o
  *(.rodata)
- .rodata        0x080000b0        0x3 main.o
-                0x080000b0                const_var
-                0x080000b3                _E_text = .
+ *fill*         0x080000ba        0x2 
+ .rodata        0x080000bc        0x3 main.o
+                0x080000bc                const_var
 
-.glue_7         0x080000b4        0x0
- .glue_7        0x080000b4        0x0 linker stubs
+.glue_7         0x080000c0        0x0
+ .glue_7        0x080000c0        0x0 linker stubs
 
-.glue_7t        0x080000b4        0x0
- .glue_7t       0x080000b4        0x0 linker stubs
+.glue_7t        0x080000c0        0x0
+ .glue_7t       0x080000c0        0x0 linker stubs
 
-.vfp11_veneer   0x080000b4        0x0
- .vfp11_veneer  0x080000b4        0x0 linker stubs
+.vfp11_veneer   0x080000c0        0x0
+ .vfp11_veneer  0x080000c0        0x0 linker stubs
 
-.v4_bx          0x080000b4        0x0
- .v4_bx         0x080000b4        0x0 linker stubs
+.v4_bx          0x080000c0        0x0
+ .v4_bx         0x080000c0        0x0 linker stubs
 
-.iplt           0x080000b4        0x0
- .iplt          0x080000b4        0x0 main.o
+.iplt           0x080000c0        0x0
+ .iplt          0x080000c0        0x0 main.o
 
-.rel.dyn        0x080000b4        0x0
- .rel.iplt      0x080000b4        0x0 main.o
+.rel.dyn        0x080000c0        0x0
+ .rel.iplt      0x080000c0        0x0 main.o
 
-.data           0x20000000        0x8 load address 0x080000b3
-                0x20000000                _S_DATA = .
+.data           0x080000c0        0x7
  *(.data)
- .data          0x20000000        0x7 main.o
-                0x20000000                P_ODR
-                0x20000004                g_var
- .data          0x20000007        0x0 startup.o
-                0x20000008                . = ALIGN (0x4)
- *fill*         0x20000007        0x1 
-                0x20000008                _E_DATA = .
+ .data          0x080000c0        0x7 main.o
+                0x080000c0                P_ODR
+                0x080000c4                g_var
+ .data          0x080000c7        0x0 startup.o
 
-.igot.plt       0x20000008        0x0 load address 0x080000bb
- .igot.plt      0x20000008        0x0 main.o
+.igot.plt       0x080000c8        0x0
+ .igot.plt      0x080000c8        0x0 main.o
 
-.bss            0x20000008        0x0 load address 0x080000bb
-                0x20000008                _S_bss = .
+.bss            0x20000000        0x0
  *(.bss)
- .bss           0x20000008        0x0 main.o
- .bss           0x20000008        0x0 startup.o
-                0x20000008                _E_bss = .
+ .bss           0x20000000        0x0 main.o
+ .bss           0x20000000        0x0 startup.o
 LOAD main.o
 LOAD startup.o
 OUTPUT(Learn_in_depth_cortex_m3.elf elf32-littlearm)
@@ -74,11 +60,10 @@ OUTPUT(Learn_in_depth_cortex_m3.elf elf32-littlearm)
 .comment        0x00000000       0x7e
  .comment       0x00000000       0x7e main.o
                                  0x7f (size before relaxing)
- .comment       0x0000007e       0x7f startup.o
 
 .ARM.attributes
-                0x00000000       0x33
+                0x00000000       0x31
  .ARM.attributes
                 0x00000000       0x33 main.o
  .ARM.attributes
-                0x00000033       0x33 startup.o
+                0x00000033       0x21 startup.o

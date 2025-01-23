@@ -12,8 +12,7 @@ Project_name=Learn_in_depth_cortex_m3
 all:$(Project_name).bin
 	@echo "||============ Build is Done ============||"
 
-startup.o:startup.s
-	$(CC)as.exe -c $(CFLAGS)  $< -o $@
+
 
 %.o: %.c
 	$(CC)gcc.exe -c $(CFLAGS) $(INCS) $< -o $@
