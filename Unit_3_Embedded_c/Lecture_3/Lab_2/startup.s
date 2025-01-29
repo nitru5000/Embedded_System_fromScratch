@@ -1,5 +1,5 @@
 /* Startup_cortexM3.s
-  abdullah rajrh
+  abdullah rajeh
 */
 
 .section .vectors

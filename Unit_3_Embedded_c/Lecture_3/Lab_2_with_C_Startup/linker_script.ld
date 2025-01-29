@@ -1,4 +1,4 @@
-
+/* Eng.abdullah */
 
 
 MEMORY
@@ -33,6 +33,9 @@ SECTIONS
         _S_bss = . ;
         *(.bss)
         _E_bss = . ;
+        . = ALIGN(4) ;
+        . = . + 0x1000;
+        _stack_top = .; 
         
     }> sram
 }    
